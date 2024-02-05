@@ -25,11 +25,13 @@ const getAllUser = async (req, res) => {
 const getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    if (!user)
+    if (!user) {
       res
         .status(404)
         .json({ message: `no record found for id ${req.params.id}!!! ` });
-    res.status(200).json(user);
+    } else {
+      res.status(200).json(user);
+    }
   } catch (error) {
     console.log("error in getUserByIdController", error);
     res.status(500).json(error);
@@ -62,12 +64,14 @@ const updateUserById = async (req, res) => {
 const deleteUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    if (!user)
+    if (!user) {
       res
         .status(404)
         .json({ message: `no record found for id ${req.params.id}!!! ` });
-    const deletedUser = await User.deleteOne({ _id: req.params.id });
-    res.status(200).json(deletedUser);
+    } else {
+      const deletedUser = await User.deleteOne({ _id: req.params.id });
+      res.status(200).json(deletedUser);
+    }
   } catch (error) {
     console.log("error in deleteUserController", error);
     res.status(404).json(error);
