@@ -1,6 +1,6 @@
-# 🔗 Welcome to the MERN APP! This full-stack application is built using the MERN stack and do all of your basic CRUD functionalit.
+# 🔗 Welcome to the REACT App this is source code of Northcott website UI.
 
-  <p align="center">MERN APP</p>  
+  <p align="center">Northcott</p>  
   <br>
     
   
